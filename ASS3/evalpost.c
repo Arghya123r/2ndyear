@@ -59,3 +59,14 @@ int evaluatePostfix(char* exp)
     return pop();
 
 }
+
+int main()
+{
+    char exp[MAX_EXPR_SIZE];
+
+    printf("Enter the postfix Expression: ");
+    scanf("%s", exp);
+
+    printf("Postfix Evaluation: %d", evaluatePostfix(exp));
+    return 0;
+}
