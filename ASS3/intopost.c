@@ -8,7 +8,7 @@
 char stack[MAX_EXPR_SIZE];
 int top = -1;
 
-void push(int elem){
+void push(char elem){
     if(top == MAX_EXPR_SIZE){
         printf("Error:Stack Overflow");
     }
@@ -19,7 +19,7 @@ void push(int elem){
 
 }
 
-int pop(){
+char pop(){
     int x;
     if(top < -1){
         printf("Error: Empty Stack");
