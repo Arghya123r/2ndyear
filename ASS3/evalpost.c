@@ -5,7 +5,7 @@
   
 #define MAX_EXPR_SIZE 100
 
-char stack[MAX_EXPR_SIZE];
+int stack[MAX_EXPR_SIZE];
 int top = -1;
 
 void push(int elem){
@@ -28,4 +28,34 @@ int pop(){
     else{
         return stack[top--];
     }
+}
+
+int evaluatePostfix(char* exp)
+{
+    int i;
+        for(i=0; exp[i]; ++i){
+            if(isdigit(exp[i]))
+                push(exp[i]-'0');
+            else{
+                int val1 = pop(stack);
+                int val2 = pop(stack);
+                switch(exp[i]){
+                    case '+':
+                        push(val2+val1);
+                        break;
+                    case '-':
+                        push(val2-val1);
+                        break;
+                    case '*':
+                        push(val2 * val1);
+                        break;
+                    case '/':
+                        push(val2/val1);
+                        break;
+                }
+            }
+        }
+    
+    return pop();
+
 }
