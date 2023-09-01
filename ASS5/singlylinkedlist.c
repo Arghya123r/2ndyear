@@ -17,9 +17,9 @@ void push(node **head_ref, int val){
 }
 
 void deleteend(node **head_ref){
-    node *end = *head_ref;
+    node *end;
     node *prev = NULL;
-
+    end = *head_ref;
     while(end->next){
         prev = end;
         end = end->next;
@@ -27,4 +27,11 @@ void deleteend(node **head_ref){
     prev->next = NULL;
 
     free(end);
+}
+
+void deletehead(node **head){
+    temp = *head;
+    head = head->next;
+
+    free(temp);
 }
