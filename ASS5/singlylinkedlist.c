@@ -57,3 +57,22 @@ void display(){
     }
 }
 
+void reverse(){
+    node* current = head;
+    node *next = NULL, *prev = NULL;
+    node *temp = head; 
+    while(current != NULL){
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+
+    head = prev;
+    tail = temp;
+    free(temp);
+}
+
+int main(){
+    
+}
