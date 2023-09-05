@@ -5,7 +5,7 @@ typedef struct node
 {
     int data;
     node *next;
-};
+}node;
 node *head = NULL;
 node *tail = NULL;
 
@@ -74,5 +74,5 @@ void reverse(){
 }
 
 int main(){
-    
+
 }
