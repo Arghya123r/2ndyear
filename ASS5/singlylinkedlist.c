@@ -39,8 +39,9 @@ void deleteend(){
     free(end);
 }
 
-void deletehead(node **head){
-    temp = *head;
+void deletehead(){
+    node *temp;
+    temp = head;
     head = head->next;
 
     free(temp);
