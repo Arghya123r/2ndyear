@@ -46,3 +46,14 @@ void deletehead(){
 
     free(temp);
 }
+
+void display(){
+    node *n;
+    n = head;
+    printf("The list is: ")
+    while(n->next){
+        printf("%d, ", n->data);
+        n = n->next;
+    }
+}
+
