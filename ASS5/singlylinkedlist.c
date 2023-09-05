@@ -7,24 +7,34 @@ typedef struct node
     node *next;
 };
 node *head = NULL;
+node *tail = NULL;
 
-void push(node **head_ref, int val){
+void push(int val){
     node* new_node = (node*)malloc(sizeof(node));
-
+    
     new_node->data = val;
-    new_node->next = (*head_ref);
-    *head_ref = new_node;
+    new_node->next = tail;
+    
+    if(head == NULL && tail == NULL){
+        head = new_node;
+        tail = new_
+    }
+    else{
+        tail.next = new_node;
+        tail = new_node;
+    }
 }
 
-void deleteend(node **head_ref){
+void deleteend(){
     node *end;
     node *prev = NULL;
-    end = *head_ref;
+    end = head;
     while(end->next){
         prev = end;
         end = end->next;
     }
     prev->next = NULL;
+    tail = prev;
 
     free(end);
 }
