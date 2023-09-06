@@ -4,30 +4,29 @@
 typedef struct node
 {
     int data;
-    node *next;
-}node;
-node *head = NULL;
-node *tail = NULL;
+    struct node *next;
+}NODE;
+NODE *head = NULL;
+NODE *tail = NULL;
 
 void push(int val){
-    node* new_node = (node*)malloc(sizeof(node));
+    NODE *new_node = (NODE*)malloc(sizeof(NODE));
     
     new_node->data = val;
-    new_node->next = tail;
     
     if(head == NULL && tail == NULL){
         head = new_node;
-        tail = new_
+        tail = new_node;
     }
     else{
-        tail.next = new_node;
+        tail->next = new_node;
         tail = new_node;
     }
 }
 
 void deleteend(){
-    node *end;
-    node *prev = NULL;
+    NODE *end;
+    NODE *prev = NULL;
     end = head;
     while(end->next){
         prev = end;
@@ -40,7 +39,7 @@ void deleteend(){
 }
 
 void deletehead(){
-    node *temp;
+    NODE *temp;
     temp = head;
     head = head->next;
 
@@ -48,31 +47,42 @@ void deletehead(){
 }
 
 void display(){
-    node *n;
+    NODE *n;
     n = head;
-    printf("The list is: ")
-    while(n->next){
+    printf("The list is: ");
+    while(n!=NULL){
         printf("%d, ", n->data);
         n = n->next;
     }
 }
 
 void reverse(){
-    node* current = head;
-    node *next = NULL, *prev = NULL;
-    node *temp = head; 
+    NODE *current = head;
+    NODE *next = NULL, *prev = NULL;
+    NODE *temp = head;
     while(current != NULL){
         next = current->next;
         current->next = prev;
         prev = current;
         current = next;
     }
-
     head = prev;
     tail = temp;
-    free(temp);
 }
 
 int main(){
-
+    push(45);
+    push(23);
+    push(55);
+    display();
+    reverse();
+    display();
+    push(53);
+    push(43);
+    display();
+    deletehead();
+    display();
+    deleteend();
+    display();
+    return 0;
 }
