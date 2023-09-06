@@ -78,7 +78,6 @@ int main(){
     reverse();
     display();
     push(53);
-    push(43);
     display();
     deletehead();
     display();
