@@ -54,7 +54,7 @@ int main(){
     push(1);
     pritnf("The initial list is:\n");
     display();
-    while (choice != 0) {
+    while (1) {
         printf("\nStack Menu:\n");
         printf("1. Push\n");
         printf("2. Pop\n");
