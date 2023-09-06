@@ -72,19 +72,50 @@ void display(){
 }
 
 int main(){
+    int num,n,x;
     push(45);
     push(23);
     push(55);
-    push(67);
-    push(65);
-    display();
-    reverse();
-    display();
     push(53);
+    push(34);
+    push(1);
+    pritnf("The initial list is:\n");
     display();
-    deletehead();
-    display();
-    deleteend();
-    display();
+    	while(1){																				//loop until user inputs 4 or exit command.
+		printf("\nEnter 1 to push, 2 to reverse, 3 to display, 4 delete from the start, 5 to delete from the end, and 6 to exit: ");
+		scanf("%d", &n);
+		
+		switch(n){
+			case(1):
+				printf("\nEnter the integer to push: ");
+				scanf("%d", &num);
+				push(num);
+				printf("The value has been added to the list.");
+				continue;
+			case(2):
+				reverse();
+				display();
+				continue;
+			case(3):
+				display();
+				continue;
+			case(4):
+                deletehead();
+                display();
+                continue;
+            case(5):
+                deleteend();
+                display();
+                continue;
+            case(6):
+                printf("Exiting...");
+                return 0;
+                break;
+			default:
+				printf("Wrong Input.");
+				continue;
+		}
+	}
+
     return 0;
 }
