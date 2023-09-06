@@ -1,10 +1,11 @@
 #include<math.h>
 #include<stdio.h>
+#include<stdlib.h>
 #define MAX 17
 typedef struct node
   {
-int coeff;
-struct node *next;
+    int coeff;
+    struct node *next;
   }node;
 node *  init();
 void read(node *h1);
@@ -20,11 +21,11 @@ void main()
   int option;
   do
   {
-      printf("nn1 : create 1st polynomial");
-      printf("n2 : create 2nd polynomial");
-      printf("n3 : Add polynomials");
-      printf("n4 : Multiply polynomials");
-      printf("n5 : Quit");
+      printf("nn1 : create 1st polynomial\n");
+      printf("n2 : create 2nd polynomial\n");
+      printf("n3 : Add polynomials\n");
+      printf("n4 : Multiply polynomials\n");
+      printf("n5 : Quit\n");
       printf("nEnter your choice :");
       scanf("%d",&option);
       switch(option)
@@ -34,17 +35,17 @@ void main()
       case 3:h3=add(h1,h2);
             printf("n1’st polynomial -> ");
             print(h1);
-            printf("n2’nd polynomial -> ");
+            printf("\nn2’nd polynomial -> ");
             print(h2);
-            printf("n Sum = ");
+            printf("\nn Sum = ");
             print(h3);
             break;
       case 4:h3=multiply(h1,h2);
-            printf("n1’st polynomial -> ");
+            printf("\nn1’st polynomial -> ");
             print(h1);
-            printf("n2’nd polynomial -> ");
+            printf("\nn2’nd polynomial -> ");
             print(h2);
-            printf("n Product = ");
+            printf("\nn Product = ");
             print(h3);
             break;
     }
@@ -56,11 +57,11 @@ void  read(node *h)
   int n,i,j,power,coeff;
   node *p;
   p=init();
-  printf("n Enter number of terms :");
+  printf("Enter number of terms :");
   scanf("%d",&n);
   /* read n terms */
   for (i=0;i<n;i++)
-  {       printf("nenter a term(power  coeff.)");
+  {       printf("Enter a term(power  coeff.)");
   scanf("%d %d",&power,&coeff);
   for(p=h,j=0;j<power;j++)
     p=p->next;

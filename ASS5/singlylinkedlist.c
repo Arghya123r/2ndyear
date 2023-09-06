@@ -79,7 +79,7 @@ int main(){
     push(53);
     push(34);
     push(1);
-    pritnf("The initial list is:\n");
+    printf("The initial list is:\n");
     display();
     	while(1){																				//loop until user inputs 4 or exit command.
 		printf("\nEnter 1 to push, 2 to reverse, 3 to display, 4 delete from the start, 5 to delete from the end, and 6 to exit: ");

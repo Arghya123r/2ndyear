@@ -8,12 +8,9 @@ typedef struct node{
 NODE *head = NULL;
 
 int pop(){
-    NODE *temp;
-    temp = head;
-    head = head->next;
     int x;
-    x = temp->data;
-    free(temp);
+    x = head->data;
+    head = head->next;
     return x;
 }
 
@@ -52,7 +49,7 @@ int main(){
     push(53);
     push(34);
     push(1);
-    pritnf("The initial list is:\n");
+    printf("The initial list is:\n");
     display();
     while (1) {
         printf("\nStack Menu:\n");
@@ -74,7 +71,7 @@ int main(){
                 continue;;
             case 2:
                 x=pop();
-                printf("%d has been removed from the stack.");
+                printf("%d has been removed from the stack.",x);
                 continue;
             case 3:
                 n=peek();
