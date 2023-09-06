@@ -49,7 +49,7 @@ void deletehead(){
 void display(){
     NODE *n;
     n = head;
-    printf("The list is: ");
+    printf("\nThe list is: ");
     while(n!=NULL){
         printf("%d, ", n->data);
         n = n->next;

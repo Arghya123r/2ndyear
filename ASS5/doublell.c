@@ -1,18 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-typedef struct Node
+typedef struct node
 {
     int data;
 
-    Node *prev;
-    Node *next;
+    struct node *prev;
+    struct node *next;
 }Node;
 
 Node *head = NULL;
 Node *tail = NULL;
 
 void push(int data){
-    Node new_node = (Node)malloc(sizeof(Node));
+    Node *new_node = (Node*)malloc(sizeof(Node));
     new_node->data = data;
     if(head==NULL && tail == NULL){
         head = new_node;
@@ -44,6 +45,7 @@ void deleteend(){
 void reverse(){
     Node *temp = NULL;
     Node *current = head;
+    Node *real = head;
 
     while(current!=NULL){
         temp = current->prev;
@@ -51,4 +53,38 @@ void reverse(){
         current->next=temp;
         current=current->prev;
     }
+    if(temp!=NULL){
+        head = temp->prev;
+    }
+    tail = real;
+}
+
+void display(){
+    Node *new = head;
+    printf("The list is: ");
+    while (new!=NULL)
+    {
+        printf("%d, ",new->data);
+        new = new->next;
+    }
+    printf("\n");
+    
+}
+
+int main(){
+    push(45);
+    push(23);
+    push(55);
+    push(67);
+    push(65);
+    display();
+    reverse();
+    display();
+    push(53);
+    display();
+    deletehead();
+    display();
+    deleteend();
+    display();
+    return 0;
 }
