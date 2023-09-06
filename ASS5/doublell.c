@@ -24,3 +24,31 @@ void push(int data){
         tail = new_node;
     }
 }
+
+void deletehead(){
+    Node *temp;
+    temp = head;
+    head=head->next;
+    head->prev=NULL;
+    free(temp);
+}
+
+void deleteend(){
+    Node *temp;
+    temp = tail;
+    tail = tail->prev;
+    tail->next=NULL;
+    free(temp);
+}
+
+void reverse(){
+    Node *temp = NULL;
+    Node *current = head;
+
+    while(current!=NULL){
+        temp = current->prev;
+        current->prev=current->next;
+        current->next=temp;
+        current=current->prev;
+    }
+}
