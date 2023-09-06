@@ -67,9 +67,6 @@ void reverse(){
         prev = current;
         current = next;
     }
-
-    head = prev;
-    tail = temp;
     free(temp);
 }
 
