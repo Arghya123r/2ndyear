@@ -94,6 +94,9 @@ node * multiply(node *h1, node *h2)
 node *h3,*p,*q,*r;
 int i,j,k,coeff,power;
 h3=init();
+p = h1;
+q = h2;
+r = h3;
 for(p=h1,i=0;p!=NULL;p=p->next,i++)
 for(q=h2,j=0;q!=NULL;q=q->next,j++)
    {
