@@ -27,7 +27,7 @@ int main(){
 	int n;
 	cout << "Enter the no. of elements: ";
 	cin >> n;
-	int arr[n];
+	int arr[50];
 	cout << "Enter elements: ";
 	for(int i=0;i<n;i++){
 		cin>>arr[i];
