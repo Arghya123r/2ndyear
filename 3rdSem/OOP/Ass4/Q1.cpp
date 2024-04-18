@@ -19,7 +19,7 @@ int main() {
   
   add(1, 2);
   add(1.56, 2.51);
-  add("NAME:Piyush Prakhar Singh", " DEPT:CSBS");
+  add("NAME:Arghya Das", " DEPT:CSBS");
 
   return 0;
 }
