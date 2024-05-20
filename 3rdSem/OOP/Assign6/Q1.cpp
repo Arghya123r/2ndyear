@@ -1,10 +1,12 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <conio.h>
+#include<string.h>
 using namespace std;
 
 int main(){
 	string S1;
 	cout << "Enter a string: ";
-	getline(cin, S1);
+	cin >> S1;
 	
 	//cin.ignore();
 	cout << "The string is: " << S1 << endl;
@@ -26,7 +28,7 @@ int main(){
 	
 	string S2;
 	cout << "Enter another string: ";
-	getline(cin.ignore(), S2);
+	cin >> S2;
 	
 	//cin.ignore();
 	cout << "The second string is: " << S2 << endl;
